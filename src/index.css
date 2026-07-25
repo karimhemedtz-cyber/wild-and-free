@@ -1,84 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Space+Grotesk:wght@400;500;600;750&family=Inter:wght@400;500;600;700&display=swap');
-@import "tailwindcss";
+:root {
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
 
-@theme {
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", "Helvetica Neue", sans-serif;
-  --font-mono: "Space Grotesk", "Courier New", monospace;
-  
-  --color-emerald-50: #f0fdf4;
-  --color-emerald-800: #1c4d42;
-  --color-emerald-950: #1a3c34;
-  --color-stone-50: #fdfcf7; /* Luxurious Sublime Editorial Cream Background */
-  --color-stone-100: #f6f2e5; /* Warm Elegant Accent borders/cards background */
-  --color-stone-200: #eadfcd; /* Sand colored border accents */
-  --color-stone-900: #1c1917;
-  --color-stone-950: #0c0a09;
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
 
-  --color-amber-50: #faf5eb;
-  --color-amber-100: #f4e9d5;
-  --color-amber-500: #a98446; /* Sophisticated Bronze Accent */
-  --color-amber-600: #8c6a2e;
-  --color-amber-700: #7a5a22;
-  --color-amber-800: #5e421a;
-  --color-amber-900: #4b3312;
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
 }
 
 body {
-  background-color: var(--color-stone-50);
-  color: var(--color-stone-900);
+  margin: 0;
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-/* Custom low-contrast high-craft editorial shadows and border styles */
-.editorial-card {
-  background-color: #ffffff;
-  border: 1px solid var(--color-stone-100);
-  box-shadow: 0 4px 20px rgba(26, 60, 52, 0.03);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.editorial-card:hover {
-  box-shadow: 0 10px 30px rgba(26, 60, 52, 0.05);
-  border-color: var(--color-stone-200);
-}
-
-/* Elegant keyframe animations */
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  75% { transform: translateX(4px); }
-}
-
-.animate-shake {
-  animation: shake 0.3s ease-in-out;
-}
-
-/* ─── Mobile-safe layout guard ───────────────────────────────────────────
-   Prevents any stray element from forcing horizontal scroll on small
-   screens, so the site always renders at the device's own width. */
-html, body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-/* ─── Global Language Translator (Google Translate engine) ──────────────
-   Google's own widget UI (banner, icon, "powered by" badge, dropdown
-   styling) is fully hidden. We render our own minimal "Select Language"
-   control (see LanguageSelector.tsx) and drive Google's hidden combo box
-   programmatically — so only the translate function ships, nothing else. */
-.goog-te-banner-frame.skiptranslate,
-.goog-te-gadget-icon,
-.goog-logo-link,
-.goog-te-gadget-simple {
-  display: none !important;
-}
-
-body {
-  top: 0 !important;
-  position: static !important;
-}
-
-.goog-te-menu-frame {
-  box-shadow: 0 10px 30px rgba(26, 60, 52, 0.15) !important;
-}
-
