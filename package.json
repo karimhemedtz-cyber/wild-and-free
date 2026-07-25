@@ -19,7 +19,7 @@
     "react-quill": "^2.0.0",
     "dompurify": "^3.0.6",
     "isomorphic-dompurify": "^2.0.0",
-    "lucide-react": "^0.263.1",
+    "lucide-react": "^0.446.0",
     "motion": "^10.16.4"
   },
   "devDependencies": {
