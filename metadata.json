@@ -1,0 +1,6 @@
+{
+  "name": "African Wise Warrior Safaris",
+  "description": "Premium luxury safari tourism website of East Africa, featuring guided game drives, custom itineraries, countries guide, about stories, and an admin booking console.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
